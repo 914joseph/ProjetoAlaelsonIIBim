@@ -1,6 +1,6 @@
 # ProjetoAlaelsonIIBim
 Projeto do 2º Bimestre
-|           | Hostnames | FQDN | Apelidos| EndereçosIps |
+|           | Hostnames | FQDN | Apelidos| EndereçosIPs |
 | --------- | --------- |------|---------| ------------ |
 | Iago      |           |      |          |             |
 | Jhonathan |           |       |         |             |
