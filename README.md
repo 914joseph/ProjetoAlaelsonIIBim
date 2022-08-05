@@ -1,8 +1,8 @@
 # ProjetoAlaelsonIIBim
 Projeto do 2º Bimestre
-|           | Hostnames |
-| --------- | --------- |
-| Iago      |           |
-| Jhonathan |           |
-| Joellen   |           |
-| Josenilton |          |
+|           | Hostnames | FQDN |
+| --------- | --------- |------|
+| Iago      |           |      |
+| Jhonathan |           |       |
+| Joellen   |           |       |
+| Josenilton |          |       |
