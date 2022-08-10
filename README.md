@@ -42,9 +42,9 @@ mkdir grupo2/VM/914/<Prof. Alaelson<3 > # substituir <Prof. Alaelson<3 > pelo no
 ```
  
  depois
-```
+`
 scp aluno@192.168.101.10:~/Public/iso-images/ubuntu-server-mini.ova /labredes/images/original
-```
+`
 Para baixar o arquivo .ova do computador do Prof. Alaelson :heart:
 
 Modificando as permissões de arquivos e pastas:
@@ -62,3 +62,4 @@ su redes
 sudo apt install virtualbox-ext-pack
 ```
 No Virtual Box, selecionar a opção Importar Appliance, dentro da opção Arquivo (Figura 1)
+
