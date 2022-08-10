@@ -117,6 +117,12 @@ Agora, deve-se atribuir um hostname para cada VM, através do comando `sudo host
 
 Para instalar SSH, deve-se entrar nas VMs e mudar o tipo de rede para NAT e rodar os comandos:
 ```
-sudo apt update   
-sudo apt upgrade -y   
+sudo apt update       # atualiza as definições e versões de pacotes/bibliotecas dos repositórios do ubuntu
+sudo apt upgrade -y   # atualiza os pacotes com as novas definições e versões 
+```
+e para realizar a instalação:
+```
+systemctl status ssh
+sudo apt-get install openssh-server
+systemctl status ssh
 ```
