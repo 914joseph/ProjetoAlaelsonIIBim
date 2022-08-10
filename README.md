@@ -103,7 +103,11 @@ As VMs consecutivas devem ter seu próprio número no final do endereço ip, é 
 - VM1-PC2 -> 192.168.14.19/24
 - VM2-PC2 -> 192.168.14.20/24
 
-Digite `ifconfig -a` para visualizar as configurações das interfaces (figura 4)
+Digite `ifconfig -a` para visualizar as configurações das interfaces (Figura 4).
 
 #figura4
+
+Por fim, configuramos a topoliga de rede das VMs para bridge para que ocorra a conexão (Figura 5).
+
+#figura5
 
