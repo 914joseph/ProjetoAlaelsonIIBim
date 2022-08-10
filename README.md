@@ -49,7 +49,7 @@ Para baixar o arquivo .ova do computador do Prof. Alaelson :heart:
 
 Modificando as permissões de arquivos e pastas:
 ```
-sudo chown -R nobody:nogroup /grupo2
+sudo chown -R nobody:redes /grupo2
 sudo chgrp -R redes /grupo2
 sudo chmod -R 771 /grupo2 
 ```
@@ -98,10 +98,10 @@ network:
 Após salvar e sair do arquivo, deve-se rodar o comando `sudo netplan apply` para aplicar as alterações de configurações. 
 
 As VMs consecutivas devem ter seu próprio número no final do endereço ip, é através desse número que os endereços poderão ser diferenciados e acessados. Exemplo:
-- VM1-PC1 -> 192.168.14.17/24
-- VM2-PC1 -> 192.168.14.18/24
-- VM1-PC2 -> 192.168.14.19/24
-- VM2-PC2 -> 192.168.14.20/24
+- Grupo2-VM01 -> 192.168.14.17/24
+- Grupo2-VM02 -> 192.168.14.18/24
+- Grupo2-VM03 -> 192.168.14.19/24
+- Grupo2-VM04 -> 192.168.14.20/24
 
 Digite `ifconfig -a` para visualizar as configurações das interfaces (Figura 4).
 
@@ -126,3 +126,15 @@ systemctl status ssh
 sudo apt-get install openssh-server
 systemctl status ssh
 ```
+Verificamos o status das portas com o comando `netstat -an | grep LISTEN.` para ver se estão escutando.
+Para garantir o funcioamento correto do controle de acesso devemos configurar o firewall para permitir conexões remota via protocolo SSH, na porta 22.
+```
+sudo ufw status
+sudo ufw allow ssh.    # ativa o ssh no firewall UFW do ubuntu.
+sudo ufw status
+```
+Para ativar o firewall, digitamos o comando `sudo ufw enable`. Após isso, deve-se retornar a configuração de rede das VMs para bridge.
+
+### Passo 4 - Acesso Remoto com Host Only no Virtual Box
+
+Crie uma interface no computador para comunicação entre o Host (PC) e a VM, e configure o servidor DHCP do no adaptador VBoxNet0. Ao verificar com o comando `ifconfig -a`
