@@ -137,4 +137,6 @@ Para ativar o firewall, digitamos o comando `sudo ufw enable`. Após isso, deve-
 
 ### Passo 4 - Acesso Remoto com Host Only no Virtual Box
 
-Crie uma interface no computador para comunicação entre o Host (PC) e a VM, e configure o servidor DHCP do no adaptador VBoxNet0. Ao verificar com o comando `ifconfig -a`
+Crie uma interface no computador para comunicação entre o Host (PC) e a VM, e configure o servidor DHCP do no adaptador VBoxNet0. Ao verificar com o comando `ifconfig -a`, deve aparecer a interface "vboxnet0"
+
+Para dar acesso a uma VM via rede pelo Terminal do PC devemos adicionar um novo adapatador de rede à VM, selecionando a opção "Habilitar Placa de Rede" e selecionando o nome da interface (vboxnet0) e a opção Conectado à Host-Only
