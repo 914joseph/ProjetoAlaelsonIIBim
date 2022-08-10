@@ -63,3 +63,17 @@ sudo apt install virtualbox-ext-pack
 ```
 No Virtual Box, selecionar a opção Importar Appliance, dentro da opção Arquivo (Figura 1)
 
+#figura 1
+
+e criar uma VM com o .ova (Figura 2)
+
+#figura2
+
+Depois, instalar o net-tools no terminal de ambas as máquinas:
+`
+sudo apt install net-tools -y
+`
+Para que a VMs utilizem a mesma rede interna é necessário acessar as configurações de Rede de cada VM e selecionar o modo rede interna e definir o nome da rede, vamos escolher grupo2 como nome da nossa rede virtual. Utilize o mesmo nome nas duas VMs (Figura3).
+
+#figura 3
+
