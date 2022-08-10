@@ -73,7 +73,19 @@ Depois, instalar o net-tools no terminal de ambas as máquinas:
 `
 sudo apt install net-tools -y
 `
-Para que a VMs utilizem a mesma rede interna é necessário acessar as configurações de Rede de cada VM e selecionar o modo rede interna e definir o nome da rede, vamos escolher grupo2 como nome da nossa rede virtual. Utilize o mesmo nome nas duas VMs (Figura3).
+Para que a VMs utilizem a mesma rede interna é necessário acessar as configurações de Rede de cada VM e selecionar o modo `rede interna` e definir o nome da rede, `grupo2` será o nome da nossa rede virtual. Utilize o mesmo nome nas duas VMs (Figura3).
 
 #figura 3
 
+Após isso, devemos editar o arquivo .yaml para configurar as interfaces de rede através do comando:
+```
+sudo nano /etc/netplan/01-netcfg.yaml
+```
+Editando o arquivo, deve-se seguir esses comandos:
+- colocar o endereço ip junto à mascara do Host
+- colocar o endereço ip do gateway
+- setar o dhcp para false, assim ele utilizará o endereço ip do campo addresses
+
+Após salvar e sair do arquivo, deve-se rodar o comando `sudo netplan apply` para aplicar as alterações de configurações. Digite `ifconfig -a` para visualizar as configurações das interfaces (figura 4)
+
+#figura4
