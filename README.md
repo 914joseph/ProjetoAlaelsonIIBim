@@ -111,3 +111,12 @@ Por fim, configuramos a topoliga de rede das VMs para bridge para que ocorra a c
 
 #figura5
 
+### Passo 3 - Nomeando Hostnames e Instalando Servidor SSH
+
+Agora, deve-se atribuir um hostname para cada VM, através do comando `sudo hostnamectl set-hostname <prof-alaelson-coracao>`, substituindo "prof-alaelson-coracao" pelos nomes da coluna de hostnames.
+
+Para instalar SSH, deve-se entrar nas VMs e mudar o tipo de rede para NAT e rodar os comandos:
+```
+sudo apt update   
+sudo apt upgrade -y   
+```
