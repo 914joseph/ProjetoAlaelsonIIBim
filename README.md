@@ -38,8 +38,7 @@ Para criar a pasta `grupo2` na raiz e as subpastas `images/original` onde ficarÃ
 cd /
 mkdir grupo2/VM
 mkdir grupo2/VM/914
-mkdir grupo2/VM/914/<Prof. Alaelson heart > # substituir <Prof. Alaelson heart
-> pelo nome do integrante
+mkdir grupo2/VM/914/<Prof. Alaelson<3 > # substituir <Prof. Alaelson<3 > pelo nome do integrante
 ```
  
  depois
