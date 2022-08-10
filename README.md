@@ -25,7 +25,7 @@ Este repositório contém os passos a serem executados para a criação de Máqu
 ### Passo 1 - Permissões e Diretórios
 
 Com o Virtual Box instalado (clique [Aqui](https://www.oracle.com/br/virtualization/solutions/try-oracle-vm-virtualbox/?source=:ad:pas:go:dg:a_lad:71700000086180912-58700007355810352-p65903375090:RC_WWMK220429P00062:PORT&SC=:ad:pas:go:dg:a_lad::RC_WWMK220429P00062:PORT:&gclid=Cj0KCQjwrs2XBhDjARIsAHVymmT-qYVIlQKAP6JNYxqoUaCuaH1PaELOxdzk_V2tUpVbWLa8OdAQZsQaAjqgEALw_wcB&gclsrc=aw.ds) para baixar o Virtual Box), criar uma pasta onde será contida a .iso do S.O. Para isso, deve-se entrar no terminal do linux e digitar o comando `su redes` para entrar no Usuário redes, que contém permissões de administrador.
-Depois, seguir os comandos:
+Depois, seguir os comandos: 
 ```
 sudo mkdir /grupo2
 cd /grupo2
@@ -33,11 +33,27 @@ mkdir images
 cd images
 mkdir original
 ```
-Para criar a pasta `grupo2` na raiz e as subpastas `images/original` onde ficará a .iso, e depois
+Para criar a pasta `grupo2` na raiz e as subpastas `images/original` onde ficará a .iso, e 
+```
+cd /
+mkdir grupo2/VM
+mkdir grupo2/VM/914
+mkdir grupo2/VM/914/<Prof. Alaelson heart > # substituir <Prof. Alaelson heart
+> pelo nome do integrante
+```
+ 
+ depois
 ```
 scp aluno@192.168.101.10:~/Public/iso-images/ubuntu-server-mini.ova /labredes/images/original
 ```
 Para baixar o arquivo .ova do computador do Prof. Alaelson :heart:
+
+Modificando as permissões de arquivos e pastas:
+```
+sudo chown -R nobody:nogroup /grupo2
+sudo chgrp -R redes /grupo2
+sudo chmod -R 771 /grupo2 
+```
 
 ### Passo2 - Rede Ponto a Ponto com Duas Máquinas Virtuais
 
