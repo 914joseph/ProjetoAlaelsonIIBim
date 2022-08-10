@@ -85,7 +85,25 @@ Editando o arquivo, deve-se seguir esses comandos:
 - colocar o endereço ip junto à mascara do Host
 - colocar o endereço ip do gateway
 - setar o dhcp para false, assim ele utilizará o endereço ip do campo addresses
+```
+network:
+    ethernets:
+        enp0s3:                        
+            addresses: [192.168.14.17/24]   
+            gateway4: 192.168.14.16         
+            dhcp4: false                  
+    version: 2
+```
 
-Após salvar e sair do arquivo, deve-se rodar o comando `sudo netplan apply` para aplicar as alterações de configurações. Digite `ifconfig -a` para visualizar as configurações das interfaces (figura 4)
+Após salvar e sair do arquivo, deve-se rodar o comando `sudo netplan apply` para aplicar as alterações de configurações. 
+
+As VMs consecutivas devem ter seu próprio número no final do endereço ip, é através desse número que os endereços poderão ser diferenciados e acessados. Exemplo:
+- VM1-PC1 -> 192.168.14.17/24
+- VM2-PC1 -> 192.168.14.18/24
+- VM1-PC2 -> 192.168.14.19/24
+- VM2-PC2 -> 192.168.14.20/24
+
+Digite `ifconfig -a` para visualizar as configurações das interfaces (figura 4)
 
 #figura4
+
