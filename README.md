@@ -1,5 +1,9 @@
-# ProjetoAlaelsonIIBim
-## Projeto do 2º Bimestre
+# Projeto do 2º Bimestre
+## Introdução
+
+Este repositório contém os passos a serem executados para a criação de Máquinas Virtuais pelo VirtualBox e a interconexão entre 8 máquinas virtuais por cabeamento Ethernet, criando um ambiente de rede virtualizada e permitindo o acesso de cada máquina virtual a partir de um Host
+
+### Tabela de Informações
 
 | Rede       |Máscara         | Gateway      | Broadcast    |
 |------------|----------------|--------------|--------------|
@@ -15,3 +19,8 @@
 | Memória | Processadores | Espaço em disco | Sistema Operacional |
 |---------|---------------|-----------------|---------------------|
 | 512MB   |      1        |      10GB       | Ubuntu (64-bit)     |
+
+## Tutorial
+
+### Passo 1
+
