@@ -28,7 +28,13 @@ Com o Virtual Box instalado (clique [Aqui](https://www.oracle.com/br/virtualizat
 Depois, seguir os comandos: 
 ```
 sudo mkdir /grupo2
-cd /grupo2
+cd /grupo2ig1<br> ig2  |192.168.14.21<br>192.168.14.22 |
+15
+| Jhonathan  |jhonathan1<br> jhonathan2   |grupo2-914.ifalara.net|jh1<br> jh2  |192.168.14.19<br> 192.168.14.20|
+16
+| Joellen    |joellen1<br> joellen2       |grupo2-914.ifalara.net|joe1<br> joe2|192.168.14.17<br> 192.168.14.18|
+17
+| Josenilton |josenilton1<br> josenilton2 |grupo2-914.ifalara.net|jos1<br> jos2
 mkdir images
 cd images
 mkdir original
@@ -63,11 +69,11 @@ sudo apt install virtualbox-ext-pack
 ```
 No Virtual Box, selecionar a opção Importar Appliance, dentro da opção Arquivo (Figura 1)
 
-![alt text](imagens/figura1.png)
+![figura1](imagens/figura1.png)
 
 e criar uma VM com o .ova (Figura 2)
 
-#figura2
+![figura2](imagens/fifura2.png)
 
 Depois, instalar o net-tools no terminal de ambas as máquinas:
 `
@@ -75,7 +81,7 @@ sudo apt install net-tools -y
 `
 Para que a VMs utilizem a mesma rede interna é necessário acessar as configurações de Rede de cada VM e selecionar o modo `rede interna` e definir o nome da rede, `grupo2` será o nome da nossa rede virtual. Utilize o mesmo nome nas duas VMs (Figura3).
 
-#figura 3
+![figura3](imagens/figura7.png)
 
 Após isso, devemos editar o arquivo .yaml para configurar as interfaces de rede através do comando:
 ```
@@ -105,11 +111,11 @@ As VMs consecutivas devem ter seu próprio número no final do endereço ip, é 
 
 Digite `ifconfig -a` para visualizar as configurações das interfaces (Figura 4).
 
-#figura4
+![figura4](imagens/figura8.png)
 
 Por fim, configuramos a topoliga de rede das VMs para bridge para que ocorra a conexão (Figura 5).
 
-#figura5
+![figura5](imagens/figura9.png)
 
 ### Passo 3 - Nomeando Hostnames e Instalando Servidor SSH
 
@@ -142,7 +148,7 @@ Crie uma interface no computador para comunicação entre o Host (PC) e a VM, e 
 Para dar acesso a uma VM via rede pelo Terminal do PC devemos adicionar um novo adapatador de rede à VM, selecionando a opção "Habilitar Placa de Rede" e selecionando o nome da interface (vboxnet0) e a opção Conectado à Host-Only.
 Configure as interfaces no netplan e ative o DHCO para o Adaptador 2 (enp0s8) (Figura 6).
 
-#figura6
+![figura6](imagens/figura10.png)
 
 e aplique as configurações com o comando `sudo netplan apply`. Para acessar as VMs remotamente, usamos `ssh <user>@<ipServidorRemoto>`, por exemplo:
 ```
