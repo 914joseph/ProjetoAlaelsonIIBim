@@ -63,7 +63,7 @@ sudo apt install virtualbox-ext-pack
 ```
 No Virtual Box, selecionar a opção Importar Appliance, dentro da opção Arquivo (Figura 1)
 
-#figura 1
+![alt text](imagens/figura1.png)
 
 e criar uma VM com o .ova (Figura 2)
 
