@@ -139,4 +139,17 @@ Para ativar o firewall, digitamos o comando `sudo ufw enable`. Após isso, deve-
 
 Crie uma interface no computador para comunicação entre o Host (PC) e a VM, e configure o servidor DHCP do no adaptador VBoxNet0. Ao verificar com o comando `ifconfig -a`, deve aparecer a interface "vboxnet0"
 
-Para dar acesso a uma VM via rede pelo Terminal do PC devemos adicionar um novo adapatador de rede à VM, selecionando a opção "Habilitar Placa de Rede" e selecionando o nome da interface (vboxnet0) e a opção Conectado à Host-Only
+Para dar acesso a uma VM via rede pelo Terminal do PC devemos adicionar um novo adapatador de rede à VM, selecionando a opção "Habilitar Placa de Rede" e selecionando o nome da interface (vboxnet0) e a opção Conectado à Host-Only.
+Configure as interfaces no netplan e ative o DHCO para o Adaptador 2 (enp0s8) (Figura 6).
+
+#figura6
+
+e aplique as configurações com o comando `sudo netplan apply`. Para acessar as VMs remotamente, usamos `ssh <user>@<ipServidorRemoto>`, por exemplo:
+```
+ssh joellen1@192.168.14.17
+```
+
+### Passo 5 - Configurando Estática de Nomes
+
+Precisamos entrar em uma VM, logar e digitar o comando `sudo nano /etc/hosts` para registrar os hostnames, endereços ip, FQDNs e Apelidos. Após isso, aplicamos as configurações com o comando `sudo netplan apply`.
+Por fim, digitamos o comando `ssh <user>@<ipServidorRemoto>` pelo terminal do PC para acessar as VMs.
