@@ -28,13 +28,7 @@ Com o Virtual Box instalado (clique [Aqui](https://www.oracle.com/br/virtualizat
 Depois, seguir os comandos: 
 ```
 sudo mkdir /grupo2
-cd /grupo2ig1<br> ig2  |192.168.14.21<br>192.168.14.22 |
-15
-| Jhonathan  |jhonathan1<br> jhonathan2   |grupo2-914.ifalara.net|jh1<br> jh2  |192.168.14.19<br> 192.168.14.20|
-16
-| Joellen    |joellen1<br> joellen2       |grupo2-914.ifalara.net|joe1<br> joe2|192.168.14.17<br> 192.168.14.18|
-17
-| Josenilton |josenilton1<br> josenilton2 |grupo2-914.ifalara.net|jos1<br> jos2
+cd /grupo2
 mkdir images
 cd images
 mkdir original
@@ -79,10 +73,6 @@ Depois, instalar o net-tools no terminal de ambas as máquinas:
 `
 sudo apt install net-tools -y
 `
-Para que a VMs utilizem a mesma rede interna é necessário acessar as configurações de Rede de cada VM e selecionar o modo `rede interna` e definir o nome da rede, `grupo2` será o nome da nossa rede virtual. Utilize o mesmo nome nas duas VMs (Figura3).
-
-![figura3](imagens/figura7.png)
-
 Após isso, devemos editar o arquivo .yaml para configurar as interfaces de rede através do comando:
 ```
 sudo nano /etc/netplan/01-netcfg.yaml
@@ -95,7 +85,7 @@ Editando o arquivo, deve-se seguir esses comandos:
 network:
     ethernets:
         enp0s3:                        
-            addresses: [192.168.14.17/24]   
+            addresses: [192.168.14.17/28]   
             gateway4: 192.168.14.16         
             dhcp4: false                  
     version: 2
@@ -104,10 +94,14 @@ network:
 Após salvar e sair do arquivo, deve-se rodar o comando `sudo netplan apply` para aplicar as alterações de configurações. 
 
 As VMs consecutivas devem ter seu próprio número no final do endereço ip, é através desse número que os endereços poderão ser diferenciados e acessados. Exemplo:
-- Grupo2-VM01 -> 192.168.14.17/24
-- Grupo2-VM02 -> 192.168.14.18/24
-- Grupo2-VM03 -> 192.168.14.19/24
-- Grupo2-VM04 -> 192.168.14.20/24
+- Grupo2-VM01 -> 192.168.14.17/28
+- Grupo2-VM02 -> 192.168.14.18/28
+- Grupo2-VM03 -> 192.168.14.19/28
+- Grupo2-VM04 -> 192.168.14.20/28
+- Grupo2-VM05 -> 192.168.14.21/28
+- Grupo2-VM06 -> 192.168.14.22/28
+- Grupo2-VM07 -> 192.168.14.23/28
+- Grupo2-VM08 -> 192.168.14.24/28
 
 Digite `ifconfig -a` para visualizar as configurações das interfaces (Figura 4).
 
@@ -128,34 +122,32 @@ sudo apt upgrade -y   # atualiza os pacotes com as novas definições e versões
 ```
 e para realizar a instalação:
 ```
-systemctl status ssh
 sudo apt-get install openssh-server
 systemctl status ssh
 ```
 Verificamos o status das portas com o comando `netstat -an | grep LISTEN.` para ver se estão escutando.
-Para garantir o funcioamento correto do controle de acesso devemos configurar o firewall para permitir conexões remota via protocolo SSH, na porta 22.
+Para garantir o funcionamento correto do controle de acesso devemos configurar o firewall para permitir conexões remota via protocolo SSH, na porta 22.
 ```
-sudo ufw status
-sudo ufw allow ssh.    # ativa o ssh no firewall UFW do ubuntu.
+sudo ufw allow ssh    # ativa o ssh no firewall UFW do ubuntu.
 sudo ufw status
 ```
 Para ativar o firewall, digitamos o comando `sudo ufw enable`. Após isso, deve-se retornar a configuração de rede das VMs para bridge.
 
 ### Passo 4 - Acesso Remoto com Host Only no Virtual Box
 
-Crie uma interface no computador para comunicação entre o Host (PC) e a VM, e configure o servidor DHCP do no adaptador VBoxNet0. Ao verificar com o comando `ifconfig -a`, deve aparecer a interface "vboxnet0"
+Crie uma interface no computador para comunicação entre o Host (PC) e a VM, e configure o servidor DHCP de uma das máquinas no adaptador VBoxNet0. Ao verificar com o comando `ifconfig -a`, deve aparecer a interface "vboxnet0"
 
 Para dar acesso a uma VM via rede pelo Terminal do PC devemos adicionar um novo adapatador de rede à VM, selecionando a opção "Habilitar Placa de Rede" e selecionando o nome da interface (vboxnet0) e a opção Conectado à Host-Only.
-Configure as interfaces no netplan e ative o DHCO para o Adaptador 2 (enp0s8) (Figura 6).
+Configure as interfaces no netplan e ative o DHCP para o Adaptador 2 (enp0s8) (Figura 6).
 
 ![figura6](imagens/figura10.png)
 
-e aplique as configurações com o comando `sudo netplan apply`. Para acessar as VMs remotamente, usamos `ssh <user>@<ipServidorRemoto>`, por exemplo:
+e aplique as configurações com o comando `sudo netplan apply`. Para acessar as VMs remotamente, usamos `ssh <user>@<ipVboxnet0>` no terminal da máquina física, por exemplo:
 ```
-ssh joellen1@192.168.14.17
+ssh administrador@192.168.56.100
 ```
 
 ### Passo 5 - Configurando Estática de Nomes
 
-Precisamos entrar em uma VM, logar e digitar o comando `sudo nano /etc/hosts` para registrar os hostnames, endereços ip, FQDNs e Apelidos. Após isso, aplicamos as configurações com o comando `sudo netplan apply`.
-Por fim, digitamos o comando `ssh <user>@<ipServidorRemoto>` pelo terminal do PC para acessar as VMs.
+Feito isso, digitamos o comando `sudo nano /etc/hosts` para registrar os hostnames, endereços ip, FQDNs e Apelidos.
+Por fim, digitamos o comando `ssh <user>@<ip/fqdn/apelido/hostname>` pelo terminal do PC para acessar as VMs e `ping <ip/fqdn/apelido/hostname>` para verificar a conexão.
