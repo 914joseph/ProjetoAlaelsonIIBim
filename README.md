@@ -159,34 +159,34 @@ Conectamos as máquinas físicas com o auxílio de um switch.<br>
 
 Por fim, digitamos o comando `ssh <user>@<ip/fqdn/apelido/hostname>` pelo terminal do PC para acessar as VMs e `ping <ip/fqdn/apelido/hostname>` para verificar a conexão.
 
-### Resultados
-#### Ping com IP
+## Resultados
+### Ping com IP
 <img src="https://github.com/914joseph/ProjetoAlaelsonIIBim/blob/main/imagens/Captura%20de%20tela%20de%202022-08-24%2009-42-11.png">
 
-#### SSH com IP
+### SSH com IP
 <img src="https://github.com/914joseph/ProjetoAlaelsonIIBim/blob/main/imagens/Captura%20de%20tela%20de%202022-08-24%2010-01-24.png">
 <img src="https://github.com/914joseph/ProjetoAlaelsonIIBim/blob/main/imagens/Captura%20de%20tela%20de%202022-08-24%2010-01-32.png">
 <img src="https://github.com/914joseph/ProjetoAlaelsonIIBim/blob/main/imagens/Captura%20de%20tela%20de%202022-08-24%2010-01-41.png">
 
-#### Ping com Hostname
+### Ping com Hostname
 <img src="https://github.com/914joseph/ProjetoAlaelsonIIBim/blob/main/imagens/Captura%20de%20tela%20de%202022-08-24%2010-03-51.png">
 
-#### SSH com Hostname
+### SSH com Hostname
 <img src="https://github.com/914joseph/ProjetoAlaelsonIIBim/blob/main/imagens/Captura%20de%20tela%20de%202022-08-24%2010-14-28.png">
 <img src="https://github.com/914joseph/ProjetoAlaelsonIIBim/blob/main/imagens/Captura%20de%20tela%20de%202022-08-24%2010-14-37.png">
 
-#### Ping com Apelido
+### Ping com Apelido
 <img src="https://github.com/914joseph/ProjetoAlaelsonIIBim/blob/main/imagens/Captura%20de%20tela%20de%202022-08-24%2010-28-23.png">
 
-#### SSH com Apelido
+### SSH com Apelido
 <img src="https://github.com/914joseph/ProjetoAlaelsonIIBim/blob/main/imagens/Captura%20de%20tela%20de%202022-08-24%2010-32-22.png">
 <img src="https://github.com/914joseph/ProjetoAlaelsonIIBim/blob/main/imagens/Captura%20de%20tela%20de%202022-08-24%2010-32-34.png">
 <img src="https://github.com/914joseph/ProjetoAlaelsonIIBim/blob/main/imagens/Captura%20de%20tela%20de%202022-08-24%2010-32-38.png">
 
-#### Ping com FQDN
+### Ping com FQDN
 <img src="https://github.com/914joseph/ProjetoAlaelsonIIBim/blob/main/imagens/Captura%20de%20tela%20de%202022-08-24%2010-43-00.png">
 
-#### SSH com FQDN
+### SSH com FQDN
 <img src="https://github.com/914joseph/ProjetoAlaelsonIIBim/blob/main/imagens/Captura%20de%20tela%20de%202022-08-26%2007-49-19.png">
 <img src="https://github.com/914joseph/ProjetoAlaelsonIIBim/blob/main/imagens/Captura%20de%20tela%20de%202022-08-26%2007-49-26.png">
 <img src="https://github.com/914joseph/ProjetoAlaelsonIIBim/blob/main/imagens/Captura%20de%20tela%20de%202022-08-26%2007-49-28.png">
