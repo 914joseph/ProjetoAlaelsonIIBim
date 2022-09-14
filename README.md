@@ -147,11 +147,12 @@ e aplique as configurações com o comando `sudo netplan apply`. Para acessar as
 ssh administrador@192.168.56.100
 ```
 
-### Passo 5 - Configurando Estática de Nomes
+### Passo 5 - Configuração Estática de Nomes
 
 Feito isso, digitamos o comando `sudo nano /etc/hosts` para registrar os hostnames, endereços ip, FQDNs e Apelidos.
+<img src="https://github.com/914joseph/ProjetoAlaelsonIIBim/blob/main/imagens/Captura%20de%20tela%20de%202022-08-26%2010-20-14.png">
 
-### Passo 5 - Estrutura Física da Rede
+### Passo 6 - Estrutura Física da Rede
 Conectamos as máquinas físicas com o auxílio de um switch.<br>
 <img src="https://github.com/914joseph/ProjetoAlaelsonIIBim/blob/main/imagens/20220826_075333.jpg" height="400" width="300">
 <img src="https://github.com/914joseph/ProjetoAlaelsonIIBim/blob/main/imagens/20220826_075418.jpg" height="400" width="300">
